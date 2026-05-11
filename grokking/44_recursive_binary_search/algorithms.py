@@ -1,6 +1,6 @@
 from typing import List
 
-def binary_search(numbers: List[int], x: int) -> int:
+def recursive_binary_search(numbers: List[int], x: int) -> int:
     numbersCount = len(numbers)
 
     if numbersCount == 0:
@@ -18,12 +18,12 @@ def binary_search(numbers: List[int], x: int) -> int:
     mid = (numbersCount - 1) // 2
 
     if numbers[mid] > x:
-        return binary_search(numbers[0:mid], x)
+        return recursive_binary_search(numbers[0:mid], x)
     else:
         if mid == 0:
             return None
 
-        result = binary_search(numbers[mid:], x)
+        result = recursive_binary_search(numbers[mid:], x)
         if result == None:
             return None
         else:

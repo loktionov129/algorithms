@@ -1,75 +1,75 @@
 from random import randint
 from unittest import TestCase
-from algorithms import binary_search
+from algorithms import recursive_binary_search
 
 class BinarySearchTest(TestCase):
     def test_search_in_empty_list_expect_none(self):
         numbers = []
         x = 42
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = None
         self.assertEqual(actual, expected)
 
     def test_search_42_expect_zero(self):
         numbers = [42]
         x = 42
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = 0
         self.assertEqual(actual, expected)
 
     def test_search_137_expect_none(self):
         numbers = [42]
         x = 137
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = None
         self.assertEqual(actual, expected)
 
     def test_search_among_two_values_expect_0(self):
         numbers = [56, 79]
         x = 56
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = 0
         self.assertEqual(actual, expected)
 
     def test_search_among_two_values_expect_1(self):
         numbers = [56, 79]
         x = 79
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = 1
         self.assertEqual(actual, expected)
 
     def test_search_2_expect_0(self):
         numbers = [2, 4, 34, 42, 99]
         x = 2
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = 0
         self.assertEqual(actual, expected)
 
     def test_search_4_expect_1(self):
         numbers = [2, 4, 34, 42, 99]
         x = 4
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = 1
         self.assertEqual(actual, expected)
 
     def test_search_34_expect_2(self):
         numbers = [2, 4, 34, 42, 99]
         x = 34
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = 2
         self.assertEqual(actual, expected)
 
     def test_search_42_expect_3(self):
         numbers = [2, 4, 34, 42, 99]
         x = 42
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = 3
         self.assertEqual(actual, expected)
 
     def test_search_99_expect_4(self):
         numbers = [2, 4, 34, 42, 99]
         x = 99
-        actual = binary_search(numbers, x)
+        actual = recursive_binary_search(numbers, x)
         expected = 4
         self.assertEqual(actual, expected)
 
@@ -78,6 +78,6 @@ class BinarySearchTest(TestCase):
         numbers.sort()
         for index, item in enumerate(numbers):
             with self.subTest(index = index, item = item, numbers = numbers):
-                actual = binary_search(numbers, item)
+                actual = recursive_binary_search(numbers, item)
                 expected = index
                 self.assertEqual(actual, expected)

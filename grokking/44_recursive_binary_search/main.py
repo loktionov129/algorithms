@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from random import randint
-from algorithms import binary_search
+from algorithms import recursive_binary_search
 from typing import List
 
 def main():
@@ -9,7 +9,7 @@ def main():
     numbers.sort()
     x = randint(29, 45)
 
-    result = binary_search(numbers, x)
+    result = recursive_binary_search(numbers, x)
     print("numbers:", numbers)
     print("x:", x)
     print("result:", result)
